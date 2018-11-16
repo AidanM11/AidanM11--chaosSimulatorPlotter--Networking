@@ -1,8 +1,9 @@
 package chaosSimulatorPlotter;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class World {
+public class World implements Serializable{
 
 	private double startArmX = 0;
 	private double startArmY = 0;
@@ -24,6 +25,8 @@ public class World {
 	private int posArraySize;
 	private double[] posArrayX;
 	private double[] posArrayY;
+	
+	private double maxForce;
 	
 	private ArrayList<Magnet> magnets = new ArrayList<Magnet>();
 	
@@ -145,7 +148,7 @@ public class World {
 	public void setHomeCoef(double homeCoef) {this.homeCoef = homeCoef;}
 	public void setFricition(double friction) {this.friction = friction;}
 	public void setMaxStopDist(double maxStopDist) {this.maxStopDist = maxStopDist;}
-	
+	public void setMaxForce(double maxForce) {this.maxForce = maxForce;}
 	
 	
 	//getters
@@ -160,6 +163,7 @@ public class World {
 	public boolean getStopped() {return stopped;}
 	public double[] getPosArrayX() {return posArrayX;}
 	public double[] getPosArrayY() {return posArrayY;}
+	public double getMaxForce() {return this.maxForce;}
 	
 }
 
